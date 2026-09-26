@@ -30,7 +30,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi! I'm Seth, a rising sophomore at Dartmouth and a Presidential Science Scholar of South Korea. I'm currently out of school for my mandatory military service as an incoming Research Scientist in the Republic of Korea Army (ROKA).
+Hi! I'm Seth, a rising sophomore at Dartmouth and a Presidential Science Scholar of South Korea. I'm currently out of school for my mandatory military service in the Republic of Korea Army (ROKA).
 
 I'm interested in solving industrial problems with robust and practical computer vision algorithms. During my time at Dartmouth, I was fortunate to work with Prof. <a href="https://engineering.dartmouth.edu/community/faculty/peter-chin">Peter Chin</a> (Dartmouth College) and Prof. <a href="https://sia.korea.ac.kr/pi">Seokhyun Chung</a> (Korea University). 
 
