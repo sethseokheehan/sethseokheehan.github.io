@@ -30,10 +30,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi! I'm Seth (석희), a rising sophomore at Dartmouth and a Presidential Science Scholar of South Korea. I'm currently out of school and lab for my military service in the Republic of Korea Army.
+Hi! I'm Seth (석희), a rising sophomore at Dartmouth and a Presidential Science Scholar of South Korea. 
 
-I'm interested in redefining cutting-edge engineering problems (mostly in computer vision) and designing robust decision-making systems that align with practical needs and inductive biases. I aim to create intuitive, universal inventions that almost anyone in the field can apply with minimal changes to existing systems. 
+I'm interested in redefining computer vision problems to better align with practical needs and designing robust decision-making systems grounded in inductive biases. I want my inventions to be intuitive and universal enough that anyone in the field can apply them with minimal changes to what's already there. 
 
 Before college, I co-founded Drice and led development of a patented and published AI-powered drone system for real-time black ice detection. I also worked for Enuma, an edtech startup developing AI-driven learning solutions for children with special needs. During my time at Dartmouth, I had the opportunity to work with Prof. <a href="https://engineering.dartmouth.edu/community/faculty/peter-chin">Peter Chin</a> (Dartmouth College) and Prof. <a href="https://sia.korea.ac.kr/pi">Seokhyun Chung</a> (Korea University). 
 
-In my free time, I cook (mostly Korean food 🇰🇷), play rock drums, and make films.
+In my free time, I cook (mostly Korean 🇰🇷), play rock drums, and make films. I'm currently out of school for my military service in the Republic of Korea Army.
