@@ -1,6 +1,6 @@
 ---
 ---
-<article class="card{% if entry.preview %} has-figure{% endif %}">
+<article class="card{% if entry.preview %} has-figure{% endif %}{% if entry.url %} linked{% endif %}">
   {%- if entry.preview %}
     {%- assign wh = entry.preview_size | split: 'x' %}
     <div class="figure">
@@ -16,7 +16,13 @@
     </div>
   {%- endif %}
   <div class="card-text">
-    <h3>{{ entry.title | escape }}</h3>
+    <h3>
+      {%- if entry.url -%}
+        <a class="card-link" href="{{ entry.url | escape }}">{{ entry.title | escape }}</a>
+      {%- else -%}
+        {{ entry.title | escape }}
+      {%- endif -%}
+    </h3>
     <p class="authors">
       {%- include authors.liquid -%}
     </p>
@@ -27,18 +33,6 @@
         {{ entry.number }}, {{ entry.year }}
       {%- elsif entry.archiveprefix == 'arXiv' -%}
         arXiv preprint, {{ entry.year }}
-      {%- endif -%}
-      {%- if entry.url %}
-        &middot;
-        <a href="{{ entry.url | escape }}">
-          {%- if entry.archiveprefix == 'arXiv' -%}arXiv{%- elsif type == 'patent' -%}Patent record{%- else -%}Paper{%- endif -%}
-        </a>
-      {%- endif -%}
-      {%- if entry.code %}
-        &middot; <a href="{{ entry.code | escape }}">Code</a>
-      {%- endif -%}
-      {%- if entry.dataset %}
-        &middot; <a href="{{ entry.dataset | escape }}">Dataset</a>
       {%- endif -%}
     </p>
     {%- if entry.summary %}
