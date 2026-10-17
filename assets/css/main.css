@@ -16,8 +16,6 @@
   --card: #f7f5f1;
   --figure-bg: #ffffff;
   --rule: #d9d4cb;
-  --dartmouth: #00693e;
-  --korea: #8b0029;
   --h1-size: 30px;
   --photo-w: 260px;
   --photo-radius: 4px;
@@ -122,12 +120,6 @@ h2 {
   min-height: 28px;
 }
 
-.dartmouth {
-  color: var(--dartmouth);
-}
-.korea {
-  color: var(--korea);
-}
 strong {
   font-weight: 600;
 }
