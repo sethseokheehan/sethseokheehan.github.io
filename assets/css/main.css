@@ -18,8 +18,8 @@
   --rule: #d9d4cb;
   --dartmouth: #00693e;
   --korea: #8b0029;
-  --h1-size: 32px;
-  --photo-w: 240px;
+  --h1-size: 30px;
+  --photo-w: 260px;
   --photo-radius: 4px;
   --section-gap: 48px;
 }
@@ -32,7 +32,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 400 15px/1.6 var(--font);
+  font: 400 14px/1.6 var(--font);
   overflow-wrap: anywhere;
 }
 
@@ -69,7 +69,7 @@ h1 {
 }
 h2 {
   margin: 0 0 24px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.3;
 }
@@ -78,13 +78,22 @@ h2 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--photo-w);
   column-gap: 32px;
-  align-items: start;
+  align-items: stretch;
 }
 .intro p {
-  margin: 0 0 16px;
+  margin: 0 0 12px;
   text-wrap: pretty;
 }
+.intro-text {
+  display: flex;
+  flex-direction: column;
+}
+/* links sit at the photo's bottom edge when the bio is shorter than the photo */
+.intro-text > nav {
+  margin-top: auto;
+}
 .photo {
+  align-self: start;
   width: var(--photo-w);
   height: auto;
   aspect-ratio: 4 / 5;
@@ -95,21 +104,22 @@ h2 {
 
 .links {
   list-style: none;
-  margin: 16px 0 0;
+  margin: 8px 0 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: 13px;
 }
 .links li + li::before {
   content: "/";
-  margin: 0 8px;
+  margin: 0 6px;
   color: var(--muted);
 }
 .links a {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: 28px;
 }
 
 .dartmouth {
@@ -144,7 +154,7 @@ strong {
   margin: 0;
 }
 .news time {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
@@ -157,7 +167,7 @@ strong {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--link);
   cursor: pointer;
 }
@@ -263,14 +273,14 @@ strong {
 }
 .card h3 {
   margin: 0;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.3;
   text-wrap: pretty;
 }
 .card p {
   margin: 4px 0 0;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
 }
 .card .status {
@@ -282,7 +292,7 @@ strong {
 }
 .legend {
   margin: 16px 0 0;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
   color: var(--muted);
 }
@@ -297,13 +307,13 @@ strong {
 }
 .working-title {
   text-wrap: pretty;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.3;
 }
 .working-meta {
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
   color: var(--muted);
 }
@@ -347,6 +357,9 @@ strong {
     order: -1;
     justify-self: center;
     margin-bottom: 24px;
+  }
+  .links a {
+    min-height: 44px;
   }
   .card.has-figure {
     display: block;
