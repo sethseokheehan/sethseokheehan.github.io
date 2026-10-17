@@ -12,7 +12,10 @@
     </ul>
     {% if items.size > 3 %}
       <details class="older-news">
-        <summary>Older news</summary>
+        {%- assign older = items.size | minus: 3 %}
+        <summary>
+          <span class="when-closed">Show {{ older }} older</span><span class="when-open">Hide older</span>
+        </summary>
         <ul>
           {% for item in items offset: 3 %}
             <li>
