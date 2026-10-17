@@ -252,7 +252,7 @@ strong {
 }
 .working-title {
   text-wrap: pretty;
-  font-weight: 600;
+  font-weight: 500;
 }
 .working-meta {
   color: var(--muted);
