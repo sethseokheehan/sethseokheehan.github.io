@@ -1,7 +1,7 @@
 # Words and photos for the "Beyond research" section (_includes/beyond.liquid).
 heading: Beyond research
 paragraphs:
-  - "I play rock drums, usually to Bring Me the Horizon, Linkin Park or Yorushika. I also work on short films, usually editing or shooting them. On <a href='https://pedia.watcha.com/en/contents/m5X2oVB'><em>Yellow Ghost</em></a>, which follows an elderly man pulling a cart of scrap paper across Seoul Station at dawn as his sense of time begins to slip, I recorded the sound. The film was selected for the Korean Short Film Competition at the 30th Busan International Film Festival (2025). Otherwise, I cook Korean food."
+  - "I play rock drums, usually to Bring Me the Horizon, Linkin Park or Yorushika. I also work on short films, mostly editing or shooting, and one of them was selected for the Busan International Film Festival. Otherwise, I cook Korean food."
 # Each photo: src (under assets/img/beyond/, resized, EXIF stripped), width, height, alt.
 # Example:
 #   - src: /assets/img/beyond/yellow-ghost.jpg
