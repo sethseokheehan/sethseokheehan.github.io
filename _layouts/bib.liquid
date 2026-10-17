@@ -20,32 +20,29 @@
     <p class="authors">
       {%- include authors.liquid -%}
     </p>
-    {%- if type == 'article' %}
-      <p class="status">{{ entry.journal | escape }}, {{ entry.volume }}({{ entry.number }}), {{ entry.year }}</p>
-    {%- elsif type == 'patent' %}
-      <p class="status">{{ entry.number }}, {{ entry.year }}</p>
-    {%- elsif entry.archiveprefix == 'arXiv' %}
-      <p class="status">arXiv preprint, {{ entry.year }}</p>
-    {%- endif %}
+    <p class="status">
+      {%- if type == 'article' -%}
+        {{ entry.journal | escape }}, {{ entry.volume }}({{ entry.number }}), {{ entry.year }}
+      {%- elsif type == 'patent' -%}
+        {{ entry.number }}, {{ entry.year }}
+      {%- elsif entry.archiveprefix == 'arXiv' -%}
+        arXiv preprint, {{ entry.year }}
+      {%- endif -%}
+      {%- if entry.url %}
+        &middot;
+        <a href="{{ entry.url | escape }}">
+          {%- if entry.archiveprefix == 'arXiv' -%}arXiv{%- elsif type == 'patent' -%}Patent record{%- else -%}Paper{%- endif -%}
+        </a>
+      {%- endif -%}
+      {%- if entry.code %}
+        &middot; <a href="{{ entry.code | escape }}">Code</a>
+      {%- endif -%}
+      {%- if entry.dataset %}
+        &middot; <a href="{{ entry.dataset | escape }}">Dataset</a>
+      {%- endif -%}
+    </p>
     {%- if entry.summary %}
       <p class="summary">{{ entry.summary | escape }}</p>
-    {%- endif %}
-    {%- if entry.url or entry.code or entry.dataset %}
-      <ul class="card-links">
-        {%- if entry.url %}
-          <li>
-            <a href="{{ entry.url | escape }}">
-              {%- if entry.archiveprefix == 'arXiv' -%}arXiv{%- elsif type == 'patent' -%}Patent record{%- else -%}Paper{%- endif -%}
-            </a>
-          </li>
-        {%- endif %}
-        {%- if entry.code %}
-          <li><a href="{{ entry.code | escape }}">Code</a></li>
-        {%- endif %}
-        {%- if entry.dataset %}
-          <li><a href="{{ entry.dataset | escape }}">Dataset</a></li>
-        {%- endif %}
-      </ul>
     {%- endif %}
   </div>
 </article>
