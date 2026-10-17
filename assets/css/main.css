@@ -374,7 +374,9 @@ strong {
     display: block;
   }
   .figure {
-    margin-bottom: 16px;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    margin-bottom: 12px;
   }
   .news li {
     display: block;
