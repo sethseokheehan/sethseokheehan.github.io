@@ -5,6 +5,6 @@ permalink: /
 availability: "I’m on leave from Dartmouth to serve in the Republic of Korea Army (October 2026 to April 2028), so email replies may arrive at a military pace. I still read every email and am happy to talk research."
 ---
 
-Hi! I'm Seth, a student at Dartmouth studying Engineering Sciences and Music, and a Presidential Science Scholar of South Korea.
+Hi! I'm Seth, a Presidential Science Scholar of South Korea. At <strong class="dartmouth">Dartmouth</strong> I work with Prof. <a href="https://sites.dartmouth.edu/lisplab/sang-peter-chin/">Peter Chin</a>, and at <strong class="korea">Korea University</strong> with Prof. <a href="https://sia.korea.ac.kr/pi">Seokhyun Chung</a>.
 
-My research focuses on robust visual anomaly detection under distribution shift, along with segmentation and 3D vision. I like to reframe vision problems around what practitioners actually need, then solve them with simple, robust methods that drop into existing pipelines with minimal changes. I work with Prof. <a href="https://sites.dartmouth.edu/lisplab/sang-peter-chin/">Peter Chin</a> at <strong class="dartmouth">Dartmouth</strong> and Prof. <a href="https://sia.korea.ac.kr/pi">Seokhyun Chung</a> at <strong class="korea">Korea University</strong>.
+My research is on robust visual anomaly detection under distribution shift, plus segmentation and 3D vision. I reframe vision problems around what practitioners need, then solve them with simple methods that drop into existing pipelines.
