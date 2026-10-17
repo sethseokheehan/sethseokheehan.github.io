@@ -247,29 +247,24 @@ strong {
   color: var(--muted);
 }
 .working {
-  margin-top: 32px;
-}
-.working h3 {
-  margin: 0 0 8px;
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 1.3;
-}
-.working .papers {
-  font-size: 14px;
-  line-height: 1.5;
+  margin-top: var(--section-gap);
 }
 .working .papers > li + li {
-  margin-top: 12px;
+  margin-top: 16px;
 }
 .working p {
   margin: 0;
 }
 .working-title {
   text-wrap: pretty;
+  font-size: 17px;
   font-weight: 500;
+  line-height: 1.3;
 }
 .working-meta {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--muted);
 }
 

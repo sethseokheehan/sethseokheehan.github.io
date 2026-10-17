@@ -7,12 +7,12 @@
     {% if cards contains '*' %}
       <p class="legend">* denotes equal contribution</p>
     {% endif %}
-    {% capture working %}{% bibliography --file working --template working %}{% endcapture %}
-    {% if working contains '<li' %}
-      <div class="working">
-        <h3 id="working-h">Working papers</h3>
-        {{ working }}
-      </div>
-    {% endif %}
+  </section>
+{% endif %}
+{% capture working %}{% bibliography --file working --template working %}{% endcapture %}
+{% if working contains '<li' %}
+  <section class="working" aria-labelledby="working-h">
+    <h2 id="working-h">Working papers</h2>
+    {{ working }}
   </section>
 {% endif %}
