@@ -9,6 +9,10 @@ layout: default
         <span lang="ko">({{ page.title_ko }})</span>
       </h1>
       {{ content }}
+      {% include links.liquid %}
+      {% if page.availability %}
+        <p class="availability">{{ page.availability }}</p>
+      {% endif %}
     </div>
   </section>
 </main>

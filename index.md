@@ -3,6 +3,7 @@ layout: home
 title: "Seth Han"
 title_ko: "한석희"
 permalink: /
+availability: "I’m on leave from Dartmouth to serve in the Republic of Korea Army (October 2026 to April 2028), so email replies may arrive at a military pace. I still read every email and am happy to talk research."
 ---
 
 Hi! I'm Seth, a student at Dartmouth studying Engineering Sciences and Music, and a Presidential Science Scholar of South Korea.

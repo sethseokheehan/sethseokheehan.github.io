@@ -1,7 +1,5 @@
-# this file contains the social media links and usernames of the author
-# the commented lines are the default social media links supported by the template
-# the socials will be displayed in the order they are defined here
-
-cv_pdf: https://drive.google.com/file/d/1eK-KbSsefbmnX-HxeYp79AZV3NFp5nT3/view?usp=sharing # path to your CV PDF file
-linkedin_username: seth-han # your LinkedIn user name
-scholar_userid: YgFpUnIAAAAJ # Google Scholar ID
+# Single source for profile links. bin/update_scholar_citations.py reads scholar_userid until Phase 5 retires it.
+email: seth.s.han.29[at]dartmouth.edu
+cv_pdf: https://drive.google.com/file/d/1eK-KbSsefbmnX-HxeYp79AZV3NFp5nT3/view?usp=sharing
+scholar_userid: YgFpUnIAAAAJ
+linkedin_username: seth-han
