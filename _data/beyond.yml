@@ -9,4 +9,8 @@ paragraphs:
 #     width: 640
 #     height: 360
 #     alt: "Film still from Yellow Ghost: ..."
-photos: []
+photos:
+  - src: /assets/img/beyond/yellow-ghost.jpg
+    width: 490
+    height: 327
+    alt: "Still from the film Yellow Ghost: an older man with gray hair and a yellow vest, seen from behind, against blurred Seoul city lights at dawn"
