@@ -1,7 +1,6 @@
 # Words and photos for the "Beyond research" section (_includes/beyond.liquid).
 heading: Beyond research
 paragraphs:
-  - "Before college, I co-founded Drice, which built a patented drone system that spots black ice on roads, and Justiz, which built a language-analysis tool that flags malicious comments so influencers can take legal action. I also worked at Enuma, which builds AI learning tools for children with special needs."
   - "I worked on the short film <a href='https://pedia.watcha.com/en/contents/m5X2oVB'><em>Yellow Ghost</em></a> (BIFF 2025). The rest of the time I play rock drums (my favorites are Bring Me the Horizon, Linkin Park and Yorushika) and cook Korean food."
 # Each photo: src (under assets/img/beyond/, resized, EXIF stripped), width, height, alt.
 # Example:
