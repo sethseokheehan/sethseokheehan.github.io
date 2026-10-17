@@ -19,7 +19,7 @@
   --dartmouth: #00693e;
   --korea: #8b0029;
   --h1-size: 32px;
-  --photo-w: 200px;
+  --photo-w: 240px;
   --photo-radius: 4px;
   --section-gap: 48px;
 }
@@ -32,12 +32,12 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 400 17px/1.6 var(--font);
+  font: 400 15px/1.6 var(--font);
   overflow-wrap: anywhere;
 }
 
 .page {
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 48px 24px 64px;
 }
@@ -65,6 +65,7 @@ h1 {
   line-height: 1.15;
   letter-spacing: -0.01em;
   text-wrap: balance;
+  text-align: center;
 }
 h2 {
   margin: 0 0 24px;
@@ -94,11 +95,16 @@ h2 {
 
 .links {
   list-style: none;
-  margin: -8px 0 16px;
+  margin: 16px 0 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0 24px;
+  justify-content: center;
+}
+.links li + li::before {
+  content: "/";
+  margin: 0 8px;
+  color: var(--muted);
 }
 .links a {
   display: inline-flex;
@@ -345,6 +351,7 @@ strong {
   }
   .photo {
     order: -1;
+    justify-self: center;
     margin-bottom: 24px;
   }
   .card.has-figure {

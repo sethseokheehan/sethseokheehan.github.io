@@ -5,11 +5,11 @@ layout: default
   <section class="intro">
     <div class="intro-text">
       <h1>{{ page.title }}</h1>
-      {% include links.liquid %}
       {{ content }}
       {% if page.availability %}
         <p class="availability">{{ page.availability }}</p>
       {% endif %}
+      {% include links.liquid %}
     </div>
     <img
       class="photo"
