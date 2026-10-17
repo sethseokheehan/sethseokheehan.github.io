@@ -225,17 +225,26 @@ strong {
   align-items: center;
   min-height: 28px;
 }
-.legend,
-.in-prep {
-  margin: 0;
+.legend {
+  margin: 16px 0 0;
   font-size: 14px;
   line-height: 1.5;
   color: var(--muted);
 }
-.legend {
-  margin-top: 16px;
+.working {
+  margin-top: 32px;
 }
-.in-prep {
+.working h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.working .papers {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.working .papers > li + li {
   margin-top: 8px;
 }
 

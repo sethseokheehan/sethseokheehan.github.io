@@ -2,7 +2,6 @@
 layout: home
 title: "Seth Seokhee Han"
 permalink: /
-in_preparation: "In preparation: papers on viewpoint errors in vision-language models and on recurring defects that contaminate unsupervised anomaly-detection training sets."
 availability: "I’m on leave from Dartmouth to serve in the Republic of Korea Army (October 2026 to April 2028), so email replies may arrive at a military pace. I still read every email and am happy to talk research."
 ---
 

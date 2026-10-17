@@ -7,8 +7,12 @@
     {% if cards contains '*' %}
       <p class="legend">* denotes equal contribution</p>
     {% endif %}
-    {% if page.in_preparation %}
-      <p class="in-prep">{{ page.in_preparation }}</p>
+    {% capture working %}{% bibliography --file working --template working %}{% endcapture %}
+    {% if working contains '<li' %}
+      <div class="working">
+        <h3 id="working-h">Working papers</h3>
+        {{ working }}
+      </div>
     {% endif %}
   </section>
 {% endif %}

@@ -1,6 +1,5 @@
 ---
 ---
-{%- assign anns = entry['author+an'] | split: ';' -%}
 <article class="card{% if entry.preview %} has-figure{% endif %}">
   {%- if entry.preview %}
     {%- assign wh = entry.preview_size | split: 'x' %}
@@ -19,22 +18,7 @@
   <div class="card-text">
     <h3>{{ entry.title | escape }}</h3>
     <p class="authors">
-      {%- for a in entry.author_array -%}
-        {%- assign flags = '' -%}
-        {%- for ann in anns -%}
-          {%- assign pair = ann | split: '=' -%}
-          {%- assign n = pair[0] | strip | plus: 0 -%}
-          {%- if n == forloop.parentloop.index -%}{%- assign flags = pair[1] -%}{%- endif -%}
-        {%- endfor -%}
-        {%- assign name = a.first | append: ' ' | append: a.last -%}
-        {%- if flags contains 'equal' -%}{%- assign name = name | append: '*' -%}{%- endif -%}
-        {%- if flags contains 'highlight' -%}
-          <strong>{{ name }}</strong>
-        {%- else -%}
-          {{ name }}
-        {%- endif -%}
-        {%- unless forloop.last -%}, {% endunless -%}
-      {%- endfor -%}
+      {%- include authors.liquid -%}
     </p>
     {%- if type == 'article' %}
       <p class="status">{{ entry.journal | escape }}, {{ entry.volume }}({{ entry.number }}), {{ entry.year }}</p>
