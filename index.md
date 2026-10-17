@@ -2,7 +2,7 @@
 layout: home
 title: "Seth Seokhee Han"
 permalink: /
-availability: "From October 2026 to April 2028, I’m on leave to serve in the Republic of Korea Army. Replies may be slow, but I read every email and am always happy to talk research."
+availability: "Until April 2028, I’m on leave to serve in the Republic of Korea Army. Replies may be slow, but I read every email and am happy to talk research."
 ---
 
 I work on robust computer vision, with a focus on anomaly detection and segmentation under distribution shift.
