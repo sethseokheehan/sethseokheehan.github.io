@@ -2,15 +2,11 @@
 heading: Beyond research
 paragraphs:
   - "Before college, I co-founded Drice, which built a patented drone system that spots black ice on roads, and Justiz, which built a language-analysis tool that flags malicious comments so influencers can take legal action. I also worked at Enuma, which builds AI learning tools for children with special needs."
-  - "I make short films too: <a href='https://pedia.watcha.com/en/contents/m5X2oVB'><em>Yellow Ghost</em></a> was selected for the Wide Angle Korean Short Film Competition at BIFF 2025. The rest of the time I play rock drums (my favorites are BMTH, Linkin Park and Yorushika) and cook Korean food, patiently."
+  - "I worked on the short film <a href='https://pedia.watcha.com/en/contents/m5X2oVB'><em>Yellow Ghost</em></a> (BIFF 2025). The rest of the time I play rock drums (my favorites are Bring Me the Horizon, Linkin Park and Yorushika) and cook Korean food."
 # Each photo: src (under assets/img/beyond/, resized, EXIF stripped), width, height, alt.
 # Example:
 #   - src: /assets/img/beyond/yellow-ghost.jpg
 #     width: 640
 #     height: 360
 #     alt: "Film still from Yellow Ghost: ..."
-photos:
-  - src: /assets/img/beyond/yellow-ghost.jpg
-    width: 490
-    height: 327
-    alt: "Still from the film Yellow Ghost: an older man with gray hair and a yellow vest, seen from behind, against blurred Seoul city lights at dawn"
+photos: []
