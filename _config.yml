@@ -188,6 +188,7 @@ kramdown:
 include: ["_pages", "_scripts"]
 exclude:
   - bin/
+  - CLAUDE.md
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
@@ -201,10 +202,10 @@ exclude:
   - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/about_einstein.md
   - purgecss.config.js
   - README.md
   - readme_preview/
+  - skills-lock.json
   - vendor
 keep_files:
   - CNAME
