@@ -165,19 +165,19 @@ strong {
   background: var(--card);
   border: 1px solid var(--rule);
   border-radius: var(--photo-radius);
-  padding: 16px;
+  padding: 12px;
 }
 .card.has-figure {
   display: grid;
-  grid-template-columns: 240px minmax(0, 1fr);
-  column-gap: 24px;
+  grid-template-columns: 176px minmax(0, 1fr);
+  column-gap: 20px;
   align-items: start;
 }
 .figure {
-  width: 240px;
+  width: 176px;
   max-width: 100%;
   aspect-ratio: 8 / 5;
-  padding: 8px;
+  padding: 6px;
   background: var(--figure-bg);
   border: 1px solid var(--rule);
   border-radius: var(--photo-radius);
@@ -199,12 +199,12 @@ strong {
   text-wrap: balance;
 }
 .card p {
-  margin: 8px 0 0;
+  margin: 4px 0 0;
   font-size: 14px;
   line-height: 1.5;
 }
 .card .status {
-  margin-top: 4px;
+  margin-top: 2px;
   color: var(--muted);
 }
 .card .summary {
@@ -212,7 +212,7 @@ strong {
 }
 .card-links {
   list-style: none;
-  margin: 8px 0 0;
+  margin: 2px 0 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -223,7 +223,7 @@ strong {
 .card-links a {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: 28px;
 }
 .legend,
 .in-prep {
@@ -278,6 +278,9 @@ strong {
   }
   .card.has-figure {
     display: block;
+  }
+  .card-links a {
+    min-height: 44px;
   }
   .figure {
     margin-bottom: 16px;
