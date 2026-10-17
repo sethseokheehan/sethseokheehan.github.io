@@ -1,0 +1,16 @@
+{%- assign target = site.data.socials[page.redirect_data] | default: page.redirect_to | absolute_url -%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting</title>
+    <link rel="canonical" href="{{ target }}">
+    <meta http-equiv="refresh" content="0; url={{ target }}">
+    <meta name="robots" content="noindex">
+  </head>
+  <body>
+    <p>
+      <a href="{{ target }}">Continue to {{ target }}</a>
+    </p>
+  </body>
+</html>

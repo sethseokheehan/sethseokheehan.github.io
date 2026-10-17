@@ -1,0 +1,11 @@
+# Words and photos for the "Beyond research" section (_includes/beyond.liquid).
+heading: Beyond research
+paragraphs:
+  - "Besides Drice, I co-founded Justiz and worked at Enuma, which builds AI learning tools for children with special needs. I also make short films: <em>Yellow Ghost</em> was selected for the Wide Angle Korean Short Film Competition at BIFF 2025. The rest of the time I play rock drums, loudly, and cook Korean food, patiently."
+# Each photo: src (under assets/img/beyond/, resized, EXIF stripped), width, height, alt.
+# Example:
+#   - src: /assets/img/beyond/yellow-ghost.jpg
+#     width: 640
+#     height: 360
+#     alt: "Film still from Yellow Ghost: ..."
+photos: []

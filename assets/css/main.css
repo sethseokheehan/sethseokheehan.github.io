@@ -239,6 +239,28 @@ strong {
   margin-top: 8px;
 }
 
+.beyond {
+  margin-top: var(--section-gap);
+}
+.beyond p {
+  margin: 0 0 16px;
+  text-wrap: pretty;
+}
+.beyond-photos {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+.beyond-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--photo-radius);
+}
+
 @media (max-width: 719px) {
   :root {
     --h1-size: 28px;
