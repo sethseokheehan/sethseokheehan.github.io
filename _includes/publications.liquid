@@ -1,0 +1,14 @@
+{% capture count %}{% bibliography_count %}{% endcapture %}
+{% if count != '0' %}
+  {% capture cards %}{% bibliography %}{% endcapture %}
+  <section class="publications" id="publications" aria-labelledby="pubs-h">
+    <h2 id="pubs-h">Publications</h2>
+    {{ cards }}
+    {% if cards contains '*' %}
+      <p class="legend">* denotes equal contribution</p>
+    {% endif %}
+    {% if page.in_preparation %}
+      <p class="in-prep">{{ page.in_preparation }}</p>
+    {% endif %}
+  </section>
+{% endif %}

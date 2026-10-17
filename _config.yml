@@ -14,6 +14,8 @@ scholar:
   source: /_bibliography/
   bibliography: papers.bib
   bibliography_template: bib
+  bibliography_list_tag: ul
+  bibliography_class: papers
 
 exclude:
   - bin/

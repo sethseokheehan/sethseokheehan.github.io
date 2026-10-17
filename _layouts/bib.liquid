@@ -1,3 +1,67 @@
 ---
 ---
-<p>{{ entry.title }}</p>
+{%- assign anns = entry['author+an'] | split: ';' -%}
+<article class="card{% if entry.preview %} has-figure{% endif %}">
+  {%- if entry.preview %}
+    {%- assign wh = entry.preview_size | split: 'x' %}
+    <div class="figure">
+      <img
+        src="{{ entry.preview | relative_url }}"
+        {% if wh.size == 2 %}
+          width="{{ wh[0] }}" height="{{ wh[1] }}"
+        {% endif %}
+        alt="{{ entry.preview_alt | escape }}"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
+  {%- endif %}
+  <div class="card-text">
+    <h3>{{ entry.title | escape }}</h3>
+    <p class="authors">
+      {%- for a in entry.author_array -%}
+        {%- assign flags = '' -%}
+        {%- for ann in anns -%}
+          {%- assign pair = ann | split: '=' -%}
+          {%- assign n = pair[0] | strip | plus: 0 -%}
+          {%- if n == forloop.parentloop.index -%}{%- assign flags = pair[1] -%}{%- endif -%}
+        {%- endfor -%}
+        {%- assign name = a.first | append: ' ' | append: a.last -%}
+        {%- if flags contains 'equal' -%}{%- assign name = name | append: '*' -%}{%- endif -%}
+        {%- if flags contains 'highlight' -%}
+          <strong>{{ name }}</strong>
+        {%- else -%}
+          {{ name }}
+        {%- endif -%}
+        {%- unless forloop.last -%}, {% endunless -%}
+      {%- endfor -%}
+    </p>
+    {%- if type == 'article' %}
+      <p class="status">{{ entry.journal | escape }}, {{ entry.volume }}({{ entry.number }}), {{ entry.year }}</p>
+    {%- elsif type == 'patent' %}
+      <p class="status">{{ entry.number }}, {{ entry.year }}</p>
+    {%- elsif entry.archiveprefix == 'arXiv' %}
+      <p class="status">arXiv preprint, {{ entry.year }}</p>
+    {%- endif %}
+    {%- if entry.summary %}
+      <p class="summary">{{ entry.summary | escape }}</p>
+    {%- endif %}
+    {%- if entry.url or entry.code or entry.dataset %}
+      <ul class="card-links">
+        {%- if entry.url %}
+          <li>
+            <a href="{{ entry.url | escape }}">
+              {%- if entry.archiveprefix == 'arXiv' -%}arXiv{%- elsif type == 'patent' -%}Patent record{%- else -%}Paper{%- endif -%}
+            </a>
+          </li>
+        {%- endif %}
+        {%- if entry.code %}
+          <li><a href="{{ entry.code | escape }}">Code</a></li>
+        {%- endif %}
+        {%- if entry.dataset %}
+          <li><a href="{{ entry.dataset | escape }}">Dataset</a></li>
+        {%- endif %}
+      </ul>
+    {%- endif %}
+  </div>
+</article>
