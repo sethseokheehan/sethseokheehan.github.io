@@ -150,6 +150,36 @@ strong {
   font-variant-numeric: tabular-nums;
 }
 
+.older-news {
+  margin-top: 8px;
+}
+.older-news summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+  color: var(--link);
+  cursor: pointer;
+}
+.older-news summary::after {
+  content: "+";
+  margin-left: 6px;
+}
+.older-news[open] summary::after {
+  content: "\2212";
+}
+.older-news summary:hover {
+  color: var(--ink);
+}
+.older-news summary:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+.older-news ul {
+  margin-top: 8px;
+}
+
 .publications {
   margin-top: var(--section-gap);
 }
