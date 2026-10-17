@@ -245,7 +245,17 @@ strong {
   line-height: 1.5;
 }
 .working .papers > li + li {
-  margin-top: 8px;
+  margin-top: 12px;
+}
+.working p {
+  margin: 0;
+}
+.working-title {
+  font-weight: 600;
+  text-wrap: balance;
+}
+.working-meta {
+  color: var(--muted);
 }
 
 .beyond {

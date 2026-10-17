@@ -1,3 +1,4 @@
 ---
 ---
-{% include authors.liquid %}. <span class="paper-title">{{ entry.title | escape }}</span>. {{ entry.note | escape }}, {{ entry.year }}.
+<p class="working-title">{{ entry.title | escape }}</p>
+<p class="working-meta">{% include authors.liquid %}. {{ entry.note | escape }}, {{ entry.year }}.</p>
