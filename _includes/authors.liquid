@@ -1,0 +1,18 @@
+{%- comment -%} Author list from entry.author_array; author+an flags: highlight = bold, equal = *. {%- endcomment -%}
+{%- assign anns = entry['author+an'] | split: ';' -%}
+{%- for a in entry.author_array -%}
+  {%- assign flags = '' -%}
+  {%- for ann in anns -%}
+    {%- assign pair = ann | split: '=' -%}
+    {%- assign n = pair[0] | strip | plus: 0 -%}
+    {%- if n == forloop.parentloop.index -%}{%- assign flags = pair[1] -%}{%- endif -%}
+  {%- endfor -%}
+  {%- assign name = a.first | append: ' ' | append: a.last -%}
+  {%- if flags contains 'equal' -%}{%- assign name = name | append: '*' -%}{%- endif -%}
+  {%- if flags contains 'highlight' -%}
+    <strong>{{ name }}</strong>
+  {%- else -%}
+    {{ name }}
+  {%- endif -%}
+  {%- unless forloop.last -%}, {% endunless -%}
+{%- endfor -%}

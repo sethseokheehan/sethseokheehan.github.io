@@ -12,3 +12,10 @@ node_modules/
 vendor
 .idea
 .venv
+
+# Local-only: planning docs, design notes, AI tooling
+.planning/
+.tastemaker/
+.claude/
+CLAUDE.md
+skills-lock.json

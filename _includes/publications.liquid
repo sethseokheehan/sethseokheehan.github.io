@@ -1,0 +1,18 @@
+{% capture count %}{% bibliography_count %}{% endcapture %}
+{% if count != '0' %}
+  {% capture cards %}{% bibliography %}{% endcapture %}
+  <section class="publications" id="publications" aria-labelledby="pubs-h">
+    <h2 id="pubs-h">Publications</h2>
+    {{ cards }}
+    {% if cards contains '*' %}
+      <p class="legend">* denotes equal contribution</p>
+    {% endif %}
+  </section>
+{% endif %}
+{% capture working %}{% bibliography --file working --template working %}{% endcapture %}
+{% if working contains '<li' %}
+  <section class="working" aria-labelledby="working-h">
+    <h2 id="working-h">Working papers</h2>
+    {{ working }}
+  </section>
+{% endif %}

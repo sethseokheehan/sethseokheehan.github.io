@@ -1,0 +1,25 @@
+{% assign beyond = site.data.beyond %}
+{% if beyond.paragraphs.size > 0 %}
+  <section class="beyond" aria-labelledby="beyond-h">
+    <h2 id="beyond-h">{{ beyond.heading }}</h2>
+    {% for p in beyond.paragraphs %}
+      <p>{{ p }}</p>
+    {% endfor %}
+    {% if beyond.photos.size > 0 %}
+      <ul class="beyond-photos">
+        {% for photo in beyond.photos %}
+          <li>
+            <img
+              src="{{ photo.src | relative_url }}"
+              width="{{ photo.width }}"
+              height="{{ photo.height }}"
+              alt="{{ photo.alt | escape }}"
+              loading="lazy"
+              decoding="async"
+            >
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+{% endif %}
