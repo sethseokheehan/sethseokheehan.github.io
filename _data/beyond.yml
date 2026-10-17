@@ -2,7 +2,7 @@
 heading: Beyond research
 paragraphs:
   - "Before college, I co-founded Drice, which built a patented drone system that spots black ice on roads, and Justiz, which built a language-analysis tool that flags malicious comments so influencers can take legal action. I also worked at Enuma, which builds AI learning tools for children with special needs."
-  - "I make short films too: <em>Yellow Ghost</em> was selected for the Wide Angle Korean Short Film Competition at BIFF 2025. The rest of the time I play rock drums, loudly, and cook Korean food, patiently."
+  - "I make short films too: <a href='https://pedia.watcha.com/en/contents/m5X2oVB'><em>Yellow Ghost</em></a> was selected for the Wide Angle Korean Short Film Competition at BIFF 2025. The rest of the time I play rock drums, loudly, and cook Korean food, patiently."
 # Each photo: src (under assets/img/beyond/, resized, EXIF stripped), width, height, alt.
 # Example:
 #   - src: /assets/img/beyond/yellow-ghost.jpg
