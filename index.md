@@ -2,7 +2,7 @@
 layout: home
 title: "Seth Seokhee Han"
 permalink: /
-availability: "I’m on leave from Dartmouth to serve in the Republic of Korea Army (October 2026 to April 2028), so email replies may arrive at a military pace. I still read every email and am happy to talk research."
+availability: "I'm currently on leave from Dartmouth to serve in the Republic of Korea Army (October 2026 to April 2028). Replies may be slow, but I read every email and am always happy to talk research."
 ---
 
 I'm a student at <strong class="dartmouth">Dartmouth College</strong> and a Presidential Science Scholar of South Korea. My research is on robust visual anomaly detection under distribution shift, plus segmentation and 3D vision. I reframe vision problems around what practitioners need, then solve them with simple methods that drop into existing pipelines.

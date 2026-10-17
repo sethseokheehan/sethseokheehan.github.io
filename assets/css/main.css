@@ -111,12 +111,6 @@ h2 {
   align-items: center;
   min-height: 44px;
 }
-.intro .availability {
-  margin: 8px 0 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--muted);
-}
 
 .dartmouth {
   color: var(--dartmouth);
