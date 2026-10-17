@@ -6,6 +6,10 @@ plugins:
   - jekyll/scholar
   - jekyll-sitemap
 
+collections:
+  news:
+    output: false
+
 scholar:
   source: /_bibliography/
   bibliography: papers.bib
@@ -15,6 +19,7 @@ exclude:
   - bin/
   - CLAUDE.md
   - docker-compose.yml
+  - Images/
   - LICENSE
   - package.json
   - package-lock.json
