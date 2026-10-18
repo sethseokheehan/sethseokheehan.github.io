@@ -19,7 +19,6 @@ scholar:
   bibliography_class: papers
 
 exclude:
-  - bin/
   - CLAUDE.md
   - docker-compose.yml
   - Images/
@@ -28,7 +27,6 @@ exclude:
   - package-lock.json
   - purgecss.config.js
   - README.md
-  - requirements.txt
   - skills-lock.json
 keep_files:
   - CNAME
