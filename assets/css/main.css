@@ -152,51 +152,107 @@ strong {
   font-variant-numeric: tabular-nums;
 }
 
-.older-news {
-  margin-top: 4px;
-  padding-left: 112px;
+.news-latest {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
 }
-.older-news summary {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 44px;
-  font-size: 13px;
-  color: var(--link);
-  cursor: pointer;
-  list-style: none;
+.news-latest ul {
+  flex: 1;
+  min-width: 0;
 }
-.older-news summary::-webkit-details-marker {
+/* the toggle only exists with JS; without it the full list simply stays open */
+.news-toggle {
   display: none;
 }
-.older-news summary::after {
-  content: "";
-  width: 6px;
-  height: 6px;
+.js .news-latest {
+  cursor: pointer;
+}
+.js .news-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--photo-radius);
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+.news-toggle:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+.chevron {
+  width: 7px;
+  height: 7px;
   border-right: 1.5px solid currentColor;
   border-bottom: 1.5px solid currentColor;
   transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.2s ease-out;
 }
-.older-news[open] summary::after {
+.news.open .chevron {
   transform: translateY(1px) rotate(-135deg);
 }
-.older-news .when-open,
-.older-news[open] .when-closed {
-  display: none;
+@media (hover: hover) and (pointer: fine) {
+  /* hover: the chevron darkens and leans the way the list will move */
+  .js .news-latest:hover .news-toggle {
+    color: var(--ink);
+  }
+  .js .news-latest:hover .chevron {
+    transform: translateY(0) rotate(45deg);
+  }
+  .js .news.open .news-latest:hover .chevron {
+    transform: translateY(-1px) rotate(-135deg);
+  }
 }
-.older-news[open] .when-open {
-  display: inline;
+.news-older {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.25s ease-out;
 }
-.older-news summary:hover {
-  color: var(--ink);
+.js .news:not(.open) .news-older {
+  grid-template-rows: 0fr;
 }
-.older-news summary:focus-visible {
-  outline: 2px solid var(--link);
-  outline-offset: 4px;
-  border-radius: 2px;
+.news-older-inner {
+  min-height: 0;
+  overflow: hidden;
 }
-.older-news ul {
-  margin: 8px 0 0 -112px;
+.news-older ul {
+  padding-top: 16px;
+}
+.js .news.open .news-older li {
+  animation: news-in 0.3s ease-out both;
+}
+.js .news.open .news-older li:nth-child(2) {
+  animation-delay: 40ms;
+}
+.js .news.open .news-older li:nth-child(3) {
+  animation-delay: 80ms;
+}
+.js .news.open .news-older li:nth-child(4) {
+  animation-delay: 120ms;
+}
+.js .news.open .news-older li:nth-child(n + 5) {
+  animation-delay: 160ms;
+}
+@keyframes news-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .news-older,
+  .chevron {
+    transition: none;
+  }
+  .js .news.open .news-older li {
+    animation: none;
+  }
 }
 
 .publications {
@@ -218,19 +274,43 @@ strong {
 }
 .card.linked {
   position: relative;
-  transition:
-    border-color 0.15s ease,
-    background-color 0.15s ease,
-    box-shadow 0.15s ease,
-    transform 0.15s ease;
+  transition: border-color 0.15s ease-out;
 }
-/* hover lift only where a real pointer can hover; touch taps would leave it stuck */
+.card.linked .card-text {
+  padding-right: 16px;
+}
+/* small arrow in the top-right corner: says "opens the paper", like the News chevron says "expands" */
+.card-arrow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 12px;
+  height: 12px;
+  color: var(--muted);
+  opacity: 0;
+  transform: translate(-2px, 2px);
+  transition:
+    opacity 0.15s ease-out,
+    transform 0.15s ease-out;
+}
+/* hover only where a real pointer can hover; touch taps would leave it stuck */
 @media (hover: hover) and (pointer: fine) {
   .card.linked:hover {
     border-color: var(--muted);
-    background: #fcfbf8;
-    box-shadow: 0 2px 8px rgba(35, 33, 30, 0.08);
-    transform: translateY(-1px);
+  }
+  .card.linked:hover .card-arrow {
+    color: var(--ink);
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.card.linked:focus-within .card-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-arrow {
+    transition: none;
   }
 }
 .card-link {
@@ -404,11 +484,5 @@ strong {
   .news time {
     display: block;
     margin-bottom: 4px;
-  }
-  .older-news {
-    padding-left: 0;
-  }
-  .older-news ul {
-    margin-left: 0;
   }
 }
