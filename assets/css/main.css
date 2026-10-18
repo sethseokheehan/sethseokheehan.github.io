@@ -15,7 +15,7 @@
   --muted: #5e5950;
   --card: #f7f5f1;
   --figure-bg: #ffffff;
-  --rule: #d9d4cb;
+  --rule: #cbc4b8;
   --h1-size: 30px;
   --photo-w: 260px;
   --photo-radius: 4px;
@@ -224,11 +224,14 @@ strong {
     box-shadow 0.15s ease,
     transform 0.15s ease;
 }
-.card.linked:hover {
-  border-color: var(--muted);
-  background: #fcfbf8;
-  box-shadow: 0 2px 8px rgba(35, 33, 30, 0.08);
-  transform: translateY(-1px);
+/* hover lift only where a real pointer can hover; touch taps would leave it stuck */
+@media (hover: hover) and (pointer: fine) {
+  .card.linked:hover {
+    border-color: var(--muted);
+    background: #fcfbf8;
+    box-shadow: 0 2px 8px rgba(35, 33, 30, 0.08);
+    transform: translateY(-1px);
+  }
 }
 .card-link {
   color: inherit;
@@ -349,6 +352,18 @@ strong {
   aspect-ratio: 3 / 2;
   object-fit: cover;
   border-radius: var(--photo-radius);
+}
+
+.site-footer {
+  margin-top: var(--section-gap);
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.site-footer p {
+  margin: 0;
 }
 
 @media (max-width: 719px) {
