@@ -20,6 +20,10 @@
   --photo-w: 260px;
   --photo-radius: 4px;
   --section-gap: 48px;
+  /* motion: one strong ease-out curve, two durations */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
 }
 
 * {
@@ -192,7 +196,7 @@ strong {
   border-right: 1.5px solid currentColor;
   border-bottom: 1.5px solid currentColor;
   transform: translateY(-2px) rotate(45deg);
-  transition: transform 0.2s ease-out;
+  transition: transform var(--dur-base) var(--ease-out);
 }
 .news.open .chevron {
   transform: translateY(1px) rotate(-135deg);
@@ -212,7 +216,7 @@ strong {
 .news-older {
   display: grid;
   grid-template-rows: 1fr;
-  transition: grid-template-rows 0.25s ease-out;
+  transition: grid-template-rows var(--dur-base) var(--ease-out);
 }
 .js .news:not(.open) .news-older {
   grid-template-rows: 0fr;
@@ -220,12 +224,16 @@ strong {
 .news-older-inner {
   min-height: 0;
   overflow: hidden;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+.js .news:not(.open) .news-older-inner {
+  opacity: 0;
 }
 .news-older ul {
   padding-top: 16px;
 }
 .js .news.open .news-older li {
-  animation: news-in 0.3s ease-out both;
+  animation: news-in var(--dur-base) var(--ease-out) both;
 }
 .js .news.open .news-older li:nth-child(2) {
   animation-delay: 40ms;
@@ -247,6 +255,7 @@ strong {
 }
 @media (prefers-reduced-motion: reduce) {
   .news-older,
+  .news-older-inner,
   .chevron {
     transition: none;
   }
@@ -274,7 +283,7 @@ strong {
 }
 .card.linked {
   position: relative;
-  transition: border-color 0.15s ease-out;
+  transition: border-color var(--dur-fast) var(--ease-out);
 }
 .card.linked .card-text {
   padding-right: 16px;
@@ -290,8 +299,8 @@ strong {
   opacity: 0;
   transform: translate(-2px, 2px);
   transition:
-    opacity 0.15s ease-out,
-    transform 0.15s ease-out;
+    opacity var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
 }
 /* hover only where a real pointer can hover; touch taps would leave it stuck */
 @media (hover: hover) and (pointer: fine) {
@@ -309,6 +318,7 @@ strong {
   transform: translate(0, 0);
 }
 @media (prefers-reduced-motion: reduce) {
+  .card.linked,
   .card-arrow {
     transition: none;
   }
@@ -316,14 +326,6 @@ strong {
 .card-link {
   color: inherit;
   text-decoration: none;
-}
-@media (prefers-reduced-motion: reduce) {
-  .card.linked {
-    transition: none;
-  }
-  .card.linked:hover {
-    transform: none;
-  }
 }
 /* stretch the title link over the whole card */
 .card-link::after {
