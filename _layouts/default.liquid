@@ -32,7 +32,7 @@
     <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
     <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
     <link rel="preload" href="{{ '/assets/fonts/instrument-sans-latin-wght.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     {% if page.url == '/' %}
       {%- assign socials = site.data.socials -%}
       <script type="application/ld+json">
