@@ -422,14 +422,14 @@ strong {
   margin: 8px 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 .beyond-photos img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1;
   object-fit: cover;
   border-radius: var(--photo-radius);
 }
@@ -480,6 +480,9 @@ strong {
   }
   .news li {
     display: block;
+  }
+  .beyond-photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .news time {
     display: block;
