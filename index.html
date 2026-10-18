@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
     <title>Seth Seokhee Han</title>
     <meta name="description" content="Seth Seokhee Han, a Dartmouth student researching robust visual anomaly detection under distribution shift.">
     <link rel="canonical" href="https://sethseokheehan.github.io/">
@@ -23,7 +26,7 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
     <link rel="preload" href="/assets/fonts/instrument-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/assets/css/main.css?v=1792334044">
+    <link rel="stylesheet" href="/assets/css/main.css?v=1792335381">
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -75,48 +78,76 @@
 
   <section class="news" aria-labelledby="news-h">
     <h2 id="news-h">News</h2>
-    <ul>
+    <div class="news-latest">
+      <ul>
+        
+          <li>
+            <time datetime="2026-06-15">Jun 2026</time>
+            <div><p>Joined <a href="https://sia.korea.ac.kr/">SIA Lab</a> at Korea University as an undergraduate research intern, advised by Prof. Seokhyun Chung.</p></div>
+          </li>
+        
+      </ul>
       
-        <li>
-          <time datetime="2026-06-15">Jun 2026</time>
-          <div><p>Joined <a href="https://sia.korea.ac.kr/">SIA Lab</a> at Korea University as an undergraduate research intern, advised by Prof. Seokhyun Chung.</p></div>
-        </li>
+        <button type="button" class="news-toggle" aria-expanded="false" aria-controls="news-older" aria-label="Show older news">
+          <span class="chevron" aria-hidden="true"></span>
+        </button>
       
-        <li>
-          <time datetime="2026-01-31">Jan 2026</time>
-          <div><p>Joined <a href="https://sites.dartmouth.edu/lisplab/">LISP Lab</a> at Dartmouth as an undergraduate research intern, advised by Prof. Peter Chin.</p></div>
-        </li>
-      
-        <li>
-          <time datetime="2025-06-01">Jun 2025</time>
-          <div><p>Awarded the <a href="https://educationusa.state.gov/scholarships/presidential-science-scholarship-korea-student-aid-foundation-hangugjanghagjaedan">Presidential Science Scholarship</a> of South Korea (2025 to 2029).</p></div>
-        </li>
-      
-    </ul>
+    </div>
     
-      <details class="older-news">
-        <summary>
-          <span class="when-closed">Show 3 older</span><span class="when-open">Hide older</span>
-        </summary>
-        <ul>
-          
-            <li>
-              <time datetime="2024-06-28">Jun 2024</time>
-              <div><p><a href="http://doi.or.kr/10.8080/1020240045738">KR Patent 10-2681032</a> for a drone-based black ice identification and warning system was granted.</p></div>
-            </li>
-          
-            <li>
-              <time datetime="2024-05-31">May 2024</time>
-              <div><p>My paper <a href="https://www.jsr.org/hs/index.php/path/article/view/6831">Real-Time Black Ice Detection in Drone View Using YOLOX</a> was accepted to the <em>Journal of Student Research</em> (vol. 13, no. 2).</p></div>
-            </li>
-          
-            <li>
-              <time datetime="2024-05-17">May 2024</time>
-              <div><p>Participated in the <a href="https://isef.net/project/etsd021t-black-ice-detection-system-using-drones-and-ai">Regeneron International Science and Engineering Fair (ISEF)</a> as a finalist and national representative of South Korea.</p></div>
-            </li>
-          
-        </ul>
-      </details>
+      <div class="news-older" id="news-older">
+        <div class="news-older-inner">
+          <ul>
+            
+              <li>
+                <time datetime="2026-01-31">Jan 2026</time>
+                <div><p>Joined <a href="https://sites.dartmouth.edu/lisplab/">LISP Lab</a> at Dartmouth as an undergraduate research intern, advised by Prof. Peter Chin.</p></div>
+              </li>
+            
+              <li>
+                <time datetime="2025-06-01">Jun 2025</time>
+                <div><p>Awarded the <a href="https://educationusa.state.gov/scholarships/presidential-science-scholarship-korea-student-aid-foundation-hangugjanghagjaedan">Presidential Science Scholarship</a> of South Korea (2025 to 2029).</p></div>
+              </li>
+            
+              <li>
+                <time datetime="2024-06-28">Jun 2024</time>
+                <div><p><a href="http://doi.or.kr/10.8080/1020240045738">KR Patent 10-2681032</a> for a drone-based black ice identification and warning system was granted.</p></div>
+              </li>
+            
+              <li>
+                <time datetime="2024-05-31">May 2024</time>
+                <div><p>My paper <a href="https://www.jsr.org/hs/index.php/path/article/view/6831">Real-Time Black Ice Detection in Drone View Using YOLOX</a> was accepted to the <em>Journal of Student Research</em> (vol. 13, no. 2).</p></div>
+              </li>
+            
+              <li>
+                <time datetime="2024-05-17">May 2024</time>
+                <div><p>Participated in the <a href="https://isef.net/project/etsd021t-black-ice-detection-system-using-drones-and-ai">Regeneron International Science and Engineering Fair (ISEF)</a> as a finalist and national representative of South Korea.</p></div>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+      <script>
+        (() => {
+          const news = document.querySelector('.news');
+          const toggle = news.querySelector('.news-toggle');
+          const older = news.querySelector('.news-older');
+          const set = (open) => {
+            news.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', open);
+            toggle.setAttribute('aria-label', open ? 'Hide older news' : 'Show older news');
+            older.inert = !open;
+          };
+          set(false);
+          toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            set(!news.classList.contains('open'));
+          });
+          // the whole latest row toggles too, except clicks on its own links
+          news.querySelector('.news-latest').addEventListener('click', (e) => {
+            if (!e.target.closest('a')) set(!news.classList.contains('open'));
+          });
+        })();
+      </script>
     
   </section>
 
@@ -127,6 +158,9 @@
   <section class="publications" id="publications" aria-labelledby="pubs-h">
     <h2 id="pubs-h">Publications</h2>
     <ul class="papers"><li><article class="card has-figure linked">
+    <svg class="card-arrow" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+      <path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
     <div class="figure">
       <img
         src="/assets/img/papers/sparc.webp"
@@ -146,6 +180,9 @@
 </article>
 </li>
 <li><article class="card has-figure linked">
+    <svg class="card-arrow" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+      <path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
     <div class="figure">
       <img
         src="/assets/img/papers/cdgp.webp"
@@ -165,6 +202,9 @@
 </article>
 </li>
 <li><article class="card has-figure linked">
+    <svg class="card-arrow" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+      <path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
     <div class="figure">
       <img
         src="/assets/img/papers/jsr.webp"
@@ -184,6 +224,9 @@
 </article>
 </li>
 <li><article class="card has-figure linked">
+    <svg class="card-arrow" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+      <path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
     <div class="figure">
       <img
         src="/assets/img/papers/patent.webp"
