@@ -28,7 +28,7 @@
     </p>
     <p class="status">
       {%- if type == 'article' -%}
-        {{ entry.journal | escape }}, {{ entry.volume }}({{ entry.number }}), {{ entry.year }}
+        {{ entry.journal | escape }}, {{ entry.year }}
       {%- elsif type == 'patent' -%}
         {{ entry.number }}, {{ entry.year }}
       {%- elsif entry.archiveprefix == 'arXiv' -%}
