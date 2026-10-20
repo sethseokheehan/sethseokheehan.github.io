@@ -111,6 +111,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   font-size: 13px;
 }
 .links li + li::before {
@@ -482,6 +483,14 @@ strong {
   }
   .beyond-photos {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  /* phones: the address gets its own line, links below */
+  .links .email {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .links .email + li::before {
+    content: none;
   }
   .news time {
     display: block;
