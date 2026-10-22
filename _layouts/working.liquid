@@ -1,4 +1,11 @@
 ---
 ---
 <p class="working-title">{{ entry.title | escape }}</p>
-<p class="working-meta">{% include authors.liquid %}. {{ entry.note | escape }}, {{ entry.year }}.</p>
+<p class="working-meta">{% include authors.liquid %}</p>
+<p class="working-meta">
+  {%- if entry.status -%}
+    {{ entry.status | escape }}
+  {%- else -%}
+    {{ entry.note | escape }}, {{ entry.year }}
+  {%- endif -%}
+</p>
